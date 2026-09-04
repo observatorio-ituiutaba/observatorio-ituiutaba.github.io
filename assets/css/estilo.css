@@ -1,0 +1,268 @@
+/* ==========================================================================
+   Observatório de Violência Doméstica de Ituiutaba
+   Folha de estilo única. Editar aqui muda o site inteiro.
+   ========================================================================== */
+
+:root {
+  --papel:    #FCFAFE;
+  --tinta:    #2B1740;
+  --tinta-2:  #5B4470;
+  --roxo:     #6B2E8F;
+  --magenta:  #C4368C;
+  --laranja:  #D9531E;
+  --lavanda:  #EDE3F7;
+  --lavanda-2:#F7F1FB;
+  --borda:    #DCCBEC;
+  --largura:  1080px;
+  --prosa:    68ch;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: Bitter, Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  line-height: 1.22;
+  color: var(--tinta);
+  margin: 0 0 .6em 0;
+  letter-spacing: -0.01em;
+}
+h1 { font-size: 2.4rem; }
+h2 { font-size: 1.55rem; margin-top: 2.4em; }
+h3 { font-size: 1.13rem; margin-top: 1.8em; }
+
+p { margin: 0 0 1.1em 0; max-width: var(--prosa); }
+a { color: var(--roxo); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--magenta); }
+:focus-visible { outline: 3px solid var(--magenta); outline-offset: 3px; border-radius: 2px; }
+
+.env { max-width: var(--largura); margin: 0 auto; padding: 0 24px; }
+.prosa { max-width: var(--prosa); }
+.discreto { color: var(--tinta-2); font-size: .93rem; }
+
+/* ---------- Faixa de emergência ---------- */
+.socorro {
+  background: var(--laranja);
+  color: #fff;
+  font-size: .93rem;
+  padding: 9px 0;
+}
+.socorro a { color: #fff; font-weight: 600; }
+.socorro .env { display: flex; gap: 18px; flex-wrap: wrap; align-items: baseline; }
+
+/* ---------- Cabeçalho ---------- */
+.topo {
+  border-bottom: 1px solid var(--borda);
+  background: var(--papel);
+  position: sticky; top: 0; z-index: 20;
+}
+.topo .env {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; padding-top: 16px; padding-bottom: 16px; flex-wrap: wrap;
+}
+.marca { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.marca svg { flex: none; }
+.marca b {
+  font-family: Bitter, Georgia, serif; font-weight: 600;
+  font-size: 1.02rem; color: var(--tinta); line-height: 1.25; display: block;
+}
+.marca span { font-size: .78rem; color: var(--tinta-2); display: block; }
+
+nav.menu { display: flex; gap: 6px; flex-wrap: wrap; }
+nav.menu a {
+  text-decoration: none; color: var(--tinta-2);
+  padding: 7px 12px; border-radius: 5px; font-size: .94rem;
+}
+nav.menu a:hover { background: var(--lavanda-2); color: var(--roxo); }
+nav.menu a[aria-current="page"] {
+  background: var(--lavanda); color: var(--roxo); font-weight: 600;
+}
+nav.menu a.ajuda { color: var(--laranja); font-weight: 600; }
+nav.menu a.ajuda:hover { background: #FCEDE5; color: var(--laranja); }
+
+/* ---------- Abertura ---------- */
+.abertura { padding: 60px 0 40px; }
+.abertura h1 { font-size: 2.75rem; max-width: 24ch; }
+.abertura .linha {
+  font-size: 1.18rem; color: var(--tinta-2); max-width: 56ch; margin-top: 22px;
+}
+
+/* ---------- Grade de meses (hero de dados) ---------- */
+.grade { margin: 34px 0 12px; overflow-x: auto; padding-bottom: 6px; }
+table.meses { border-collapse: collapse; font-size: .74rem; }
+table.meses th {
+  font-family: "Source Sans 3", sans-serif; font-weight: 500;
+  color: var(--tinta-2); padding: 3px 5px; text-align: center;
+}
+table.meses th[scope="row"] { text-align: right; padding-right: 9px; }
+table.meses td { padding: 2px; }
+table.meses i {
+  display: block; width: 32px; height: 24px; border-radius: 2px;
+  font-style: normal;
+}
+.legenda {
+  display: flex; align-items: center; gap: 9px;
+  font-size: .82rem; color: var(--tinta-2); margin-top: 10px; flex-wrap: wrap;
+}
+.legenda i { display: inline-block; width: 22px; height: 12px; border-radius: 2px; }
+
+/* ---------- Números-chave ---------- */
+.numeros {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr));
+  gap: 1px; background: var(--borda);
+  border: 1px solid var(--borda); border-radius: 6px; overflow: hidden;
+  margin: 40px 0;
+}
+.numeros div { background: var(--papel); padding: 20px 18px; }
+.numeros b {
+  display: block; font-family: Bitter, Georgia, serif; font-size: 2rem;
+  font-weight: 600; color: var(--roxo); line-height: 1;
+}
+.numeros span { display: block; font-size: .87rem; color: var(--tinta-2); margin-top: 8px; }
+
+/* ---------- Seções ---------- */
+section { padding: 8px 0 28px; }
+.secao-titulo { border-top: 2px solid var(--roxo); padding-top: 14px; margin-top: 48px; }
+.secao-titulo h2 { margin-top: 0; }
+
+/* ---------- Lista de boletins ---------- */
+.boletim {
+  border: 1px solid var(--borda); border-radius: 6px;
+  padding: 22px 24px; margin-bottom: 18px; background: #fff;
+  display: grid; grid-template-columns: 76px 1fr; gap: 22px; align-items: start;
+}
+.boletim .num {
+  font-family: Bitter, Georgia, serif; font-size: 2.1rem; font-weight: 600;
+  color: var(--lavanda); line-height: 1; padding-top: 2px;
+}
+.boletim h3 { margin: 0 0 6px 0; font-size: 1.16rem; }
+.boletim .meta { font-size: .85rem; color: var(--tinta-2); margin-bottom: 10px; }
+.boletim p { margin-bottom: 14px; }
+.boletim.previsto { background: var(--lavanda-2); border-style: dashed; }
+
+.botao {
+  display: inline-block; background: var(--roxo); color: #fff;
+  text-decoration: none; padding: 9px 18px; border-radius: 5px;
+  font-size: .93rem; font-weight: 600;
+}
+.botao:hover { background: var(--magenta); color: #fff; }
+.botao.vazado {
+  background: transparent; color: var(--roxo); border: 1.5px solid var(--borda);
+}
+.botao.vazado:hover { background: var(--lavanda); color: var(--roxo); }
+
+/* ---------- Tabelas de dados ---------- */
+table.dados {
+  border-collapse: collapse; width: 100%; font-size: .92rem; margin: 18px 0;
+}
+table.dados th {
+  text-align: left; font-family: "Source Sans 3", sans-serif; font-weight: 600;
+  font-size: .82rem; color: var(--tinta-2);
+  border-bottom: 2px solid var(--roxo); padding: 9px 12px;
+}
+table.dados td { padding: 9px 12px; border-bottom: 1px solid var(--borda); }
+table.dados td.n, table.dados th.n { text-align: right; font-variant-numeric: tabular-nums; }
+table.dados tr.parcial td { color: var(--tinta-2); font-style: italic; }
+table.dados caption {
+  caption-side: bottom; text-align: left; font-size: .82rem;
+  color: var(--tinta-2); padding-top: 10px;
+}
+
+/* ---------- Aviso ---------- */
+.aviso {
+  border-left: 4px solid var(--laranja); background: #FDF2EC;
+  padding: 16px 20px; border-radius: 0 5px 5px 0; margin: 26px 0;
+}
+.aviso p { margin: 0; max-width: none; font-size: .95rem; color: #7A3D18; }
+.aviso p + p { margin-top: 9px; }
+
+/* ---------- Painel ---------- */
+.controles {
+  display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+  margin: 22px 0 8px;
+}
+.controles button {
+  font: inherit; font-size: .91rem; cursor: pointer;
+  background: #fff; border: 1.5px solid var(--borda); color: var(--tinta-2);
+  padding: 7px 15px; border-radius: 20px;
+}
+.controles button[aria-pressed="true"] {
+  background: var(--roxo); border-color: var(--roxo); color: #fff; font-weight: 600;
+}
+.tela {
+  border: 1px solid var(--borda); border-radius: 6px; background: #fff;
+  padding: 20px; margin: 16px 0 8px; height: 430px;
+}
+@media (max-width: 600px) { .tela { height: 330px; padding: 12px; } }
+
+/* ---------- Serviços ---------- */
+.servico {
+  border: 1px solid var(--borda); border-left: 4px solid var(--roxo);
+  border-radius: 0 6px 6px 0; padding: 18px 22px; margin-bottom: 14px; background: #fff;
+}
+.servico.urgente { border-left-color: var(--laranja); background: #FDF7F3; }
+.servico h3 { margin: 0 0 4px 0; font-size: 1.06rem; }
+.servico .tel {
+  font-family: Bitter, Georgia, serif; font-size: 1.5rem; font-weight: 600;
+  color: var(--laranja); display: block; margin: 4px 0 6px;
+}
+.servico p { margin: 0 0 4px 0; font-size: .93rem; }
+.servico .conferir {
+  font-size: .82rem; color: var(--magenta); font-weight: 600; margin-top: 8px;
+}
+
+/* ---------- Equipe ---------- */
+.pessoas {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px;
+  margin: 22px 0;
+}
+.pessoa { border-top: 2px solid var(--lavanda); padding-top: 14px; }
+.pessoa b { display: block; font-size: 1.02rem; }
+.pessoa span { display: block; font-size: .88rem; color: var(--tinta-2); }
+
+/* ---------- Rodapé ---------- */
+footer {
+  border-top: 1px solid var(--borda); margin-top: 72px;
+  padding: 34px 0 46px; font-size: .88rem; color: var(--tinta-2);
+}
+footer .env { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 28px; }
+footer h4 { font-size: .82rem; margin: 0 0 8px; color: var(--tinta); }
+footer p { max-width: 38ch; margin-bottom: .5em; }
+footer a { color: var(--tinta-2); }
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .abertura h1 { font-size: 2rem; }
+  h1 { font-size: 1.9rem; }
+  .boletim { grid-template-columns: 1fr; gap: 10px; }
+  .boletim .num { font-size: 1.5rem; }
+}
+
+/* ---------- Ajustes para telas estreitas ---------- */
+@media (max-width: 700px) {
+  .socorro { font-size: .86rem; padding: 7px 0; }
+  .socorro .env { gap: 4px 10px; }
+  .so-detalhe { display: none; }
+  .topo { position: static; }
+  .topo .env { padding-top: 12px; padding-bottom: 12px; gap: 12px; }
+  nav.menu { gap: 2px; }
+  nav.menu a { padding: 6px 9px; font-size: .89rem; }
+  .abertura { padding: 32px 0 28px; }
+  table.meses i { width: 22px; height: 18px; }
+}
