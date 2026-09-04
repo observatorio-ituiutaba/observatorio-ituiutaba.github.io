@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6ea8ff"/>
+      <stop offset="0.55" stop-color="#2f66d8"/>
+      <stop offset="1" stop-color="#26319a"/>
+    </linearGradient>
+    <linearGradient id="center" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b9d5ff" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#6287d9" stop-opacity=".58"/>
+    </linearGradient>
+    <clipPath id="mapClip">
+      <circle cx="500" cy="500" r="310"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1000" height="1000" fill="white"/>
+
+  <!-- Outer segmented monitoring ring -->
+  <path d="M130 500 A370 370 0 0 1 500 130" fill="none" stroke="#e2e3e8" stroke-width="58"/>
+  <path d="M500 130 A370 370 0 0 1 830 330" fill="none" stroke="#171717" stroke-width="58"/>
+  <path d="M870 390 A370 370 0 0 1 820 690" fill="none" stroke="#d0d2d9" stroke-width="34"/>
+  <path d="M790 760 A370 370 0 0 1 500 870" fill="none" stroke="#9da1ad" stroke-width="34"/>
+  <path d="M500 870 A370 370 0 0 1 170 700" fill="none" stroke="url(#blue)" stroke-width="58"/>
+  <path d="M130 610 A370 370 0 0 1 130 500" fill="none" stroke="#2f73e8" stroke-width="34"/>
+
+  <!-- Inner fine ring -->
+  <circle cx="500" cy="500" r="338" fill="none" stroke="#f4f4f6" stroke-width="16"/>
+  <circle cx="500" cy="500" r="327" fill="none" stroke="#c5c8d0" stroke-width="5"/>
+
+  <!-- Tick marks -->
+  <g fill="#222">
+    <g transform="rotate(8 500 500)">
+      <rect x="492" y="82" width="16" height="42" rx="2"/>
+      <rect x="535" y="85" width="16" height="42" rx="2"/>
+      <rect x="578" y="92" width="16" height="42" rx="2"/>
+      <rect x="621" y="103" width="16" height="42" rx="2"/>
+      <rect x="664" y="120" width="16" height="42" rx="2"/>
+    </g>
+    <g transform="rotate(82 500 500)">
+      <rect x="492" y="76" width="15" height="42"/>
+      <rect x="535" y="78" width="15" height="42"/>
+      <rect x="578" y="84" width="15" height="42"/>
+      <rect x="621" y="95" width="15" height="42"/>
+      <rect x="664" y="111" width="15" height="42"/>
+      <rect x="707" y="132" width="15" height="42"/>
+      <rect x="750" y="158" width="15" height="42"/>
+      <rect x="793" y="191" width="15" height="42"/>
+      <rect x="828" y="230" width="15" height="42"/>
+      <rect x="852" y="274" width="15" height="42"/>
+      <rect x="867" y="320" width="15" height="42"/>
+      <rect x="874" y="368" width="15" height="42"/>
+      <rect x="876" y="416" width="15" height="42"/>
+      <rect x="876" y="464" width="15" height="42"/>
+      <rect x="876" y="512" width="15" height="42"/>
+      <rect x="870" y="560" width="15" height="42"/>
+      <rect x="856" y="608" width="15" height="42"/>
+      <rect x="836" y="653" width="15" height="42"/>
+      <rect x="807" y="694" width="15" height="42"/>
+      <rect x="772" y="730" width="15" height="42"/>
+      <rect x="732" y="760" width="15" height="42"/>
+      <rect x="688" y="784" width="15" height="42"/>
+      <rect x="640" y="801" width="15" height="42"/>
+    </g>
+  </g>
+
+  <!-- City/map field -->
+  <circle cx="500" cy="500" r="310" fill="#202020"/>
+  <g clip-path="url(#mapClip)" fill="none" stroke="white" stroke-linecap="round">
+    <g stroke-width="8">
+      <path d="M180 410 L310 350 L420 360 L500 300 L610 335 L750 270"/>
+      <path d="M170 475 L280 450 L370 490 L470 445 L570 470 L720 410 L830 430"/>
+      <path d="M160 550 L275 525 L350 570 L455 535 L550 575 L680 530 L845 570"/>
+      <path d="M190 640 L300 600 L390 650 L500 610 L600 650 L710 610 L815 665"/>
+      <path d="M250 735 L340 675 L450 710 L545 680 L650 730 L770 700"/>
+    </g>
+    <g stroke-width="5">
+      <path d="M270 180 L260 820"/>
+      <path d="M330 170 L350 820"/>
+      <path d="M400 165 L410 835"/>
+      <path d="M470 160 L465 840"/>
+      <path d="M540 160 L550 840"/>
+      <path d="M615 175 L605 830"/>
+      <path d="M685 190 L670 815"/>
+      <path d="M750 230 L735 780"/>
+      <path d="M210 270 L790 750"/>
+      <path d="M185 330 L815 690"/>
+      <path d="M185 690 L810 300"/>
+      <path d="M230 770 L770 230"/>
+    </g>
+    <g stroke-width="13">
+      <path d="M150 505 C290 470 365 500 450 570 S650 720 850 520"/>
+      <path d="M235 790 C350 670 420 610 500 500 S660 350 805 215"/>
+      <path d="M190 300 C310 390 380 430 500 500 S690 620 815 690"/>
+    </g>
+  </g>
+
+  <!-- Soft central observation hub -->
+  <circle cx="500" cy="500" r="92" fill="url(#center)" stroke="#d7e5ff" stroke-width="3"/>
+  <circle cx="500" cy="500" r="74" fill="none" stroke="#ffffff" stroke-opacity=".22" stroke-width="3"/>
+  <path d="M440 520 L470 485 L495 505 L525 460 L565 485" fill="none" stroke="#ffffff" stroke-opacity=".25" stroke-width="8"/>
+
+  <!-- Deliberate ring breaks -->
+  <g fill="white">
+    <rect x="486" y="105" width="28" height="70"/>
+    <rect x="486" y="825" width="28" height="70"/>
+    <rect x="105" y="486" width="70" height="28"/>
+    <rect x="825" y="486" width="70" height="28"/>
+  </g>
+</svg>
