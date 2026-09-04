@@ -4,17 +4,16 @@
    ========================================================================== */
 
 :root {
-  --papel:    #FCFAFE;
-  --tinta:    #2B1740;
-  --tinta-2:  #5B4470;
-  --roxo:     #6B2E8F;
-  --magenta:  #C4368C;
-  --laranja:  #D9531E;
-  --lavanda:  #EDE3F7;
-  --lavanda-2:#F7F1FB;
-  --borda:    #DCCBEC;
-  --largura:  1080px;
-  --prosa:    68ch;
+   --papel:    #FAFAFA;   /* fundo de todas as páginas */
+  --tinta:    #1A1A1D;   /* títulos e texto principal */
+  --tinta-2:  #57575E;   /* texto secundário, legendas, rodapé, eixos */
+  --roxo:     #3D3D44;   /* cor principal: links, botões, barras dos gráficos */
+  --magenta:  #7C7C85;   /* destaque secundário nos gráficos */
+  --laranja:  #A33A2A;   /* faixa de emergência, telefones, alertas */
+  --lavanda:  #E4E4E7;   /* fundos de destaque, tom claro da grade */
+  --lavanda-2:#F2F2F4;   /* fundo mais claro, caixas de citação */
+  --lavanda-3:#A8A8B0;   /* tom médio: séries secundárias, anos parciais */
+  --borda:    #D8D8DC;   /* linhas de tabela e contornos de caixa */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
