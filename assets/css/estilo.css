@@ -1,19 +1,33 @@
 /* ==========================================================================
-   Observatório de Violência Doméstica de Ituiutaba
+   Observatório de Segurança Pública — Ituiutaba/MG
    Folha de estilo única. Editar aqui muda o site inteiro.
    ========================================================================== */
 
+/* ---------------------------------------------------------------------------
+   PALETA DO SITE
+
+   Todas as cores do site saem daqui — as seis páginas, os gráficos do painel,
+   a grade da página inicial e o símbolo do cabeçalho. Trocar um código aqui
+   muda tudo que usa aquela cor. Não há cor escrita em nenhum outro arquivo.
+
+   Para testar antes de publicar: edite este arquivo no seu computador e abra
+   o index.html no navegador. A mudança aparece na hora.
+   --------------------------------------------------------------------------- */
+
 :root {
-   --papel:    #FAFAFA;   /* fundo de todas as páginas */
+  --papel:    #FAFAFA;   /* fundo de todas as páginas */
   --tinta:    #1A1A1D;   /* títulos e texto principal */
   --tinta-2:  #57575E;   /* texto secundário, legendas, rodapé, eixos */
   --roxo:     #3D3D44;   /* cor principal: links, botões, barras dos gráficos */
   --magenta:  #7C7C85;   /* destaque secundário nos gráficos */
-  --laranja:  #A33A2A;   /* faixa de emergência, telefones, alertas */
-  --lavanda:  #E4E4E7;   /* fundos de destaque, tom claro da grade */
-  --lavanda-2:#F2F2F4;   /* fundo mais claro, caixas de citação */
-  --lavanda-3:#A8A8B0;   /* tom médio: séries secundárias, anos parciais */
+  --laranja:  #A33A2A;   /* faixa de emergência, telefones, alertas, fins de semana */
+  --lavanda:  #E4E4E7;   /* fundos de destaque, tom mais claro da grade */
+  --lavanda-2:#F2F2F4;   /* fundo mais claro ainda, caixas de citação, grade dos eixos */
+  --lavanda-3:#A8A8B0;   /* tom médio: séries secundárias dos gráficos, anos parciais */
   --borda:    #D8D8DC;   /* linhas de tabela e contornos de caixa */
+
+  --largura:  1080px;    /* largura máxima do conteúdo */
+  --prosa:    68ch;      /* largura máxima dos parágrafos, para leitura confortável */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -265,7 +279,8 @@ footer a { color: var(--tinta-2); }
   .abertura { padding: 32px 0 28px; }
   table.meses i { width: 22px; height: 18px; }
 }
-* ---------- Capa: logo grande + apresentação ---------- */
+
+/* ---------- Capa: logo grande + apresentação ---------- */
 .capa {
   display: grid; grid-template-columns: 152px 1fr; gap: 40px;
   align-items: center; padding: 56px 0 44px;
@@ -275,7 +290,7 @@ footer a { color: var(--tinta-2); }
 .capa p { font-size: 1.08rem; color: var(--tinta-2); max-width: 54ch; }
 .capa p:last-child { margin-bottom: 0; }
 @media (max-width: 700px) {
-  .capa { grid-template-columns: 1fr; gap: 22px; padding: 30px 0 26px; }
+  .capa { grid-template-columns: 1fr; gap: 22px; padding: 30px 0 26px; text-align: left; }
   .capa img, .capa svg { width: 104px; }
   .capa h1 { font-size: 1.8rem; }
 }
@@ -286,7 +301,9 @@ footer a { color: var(--tinta-2); }
   padding: 22px 0; border-bottom: 1px solid var(--borda); align-items: start;
 }
 .noticia:last-child { border-bottom: none; }
-.noticia .data { font-size: .82rem; color: var(--tinta-2); padding-top: 3px; line-height: 1.4; }
+.noticia .data {
+  font-size: .82rem; color: var(--tinta-2); padding-top: 3px; line-height: 1.4;
+}
 .noticia .etiqueta {
   display: inline-block; background: var(--lavanda); color: var(--roxo);
   font-size: .72rem; font-weight: 600; padding: 2px 8px; border-radius: 3px;

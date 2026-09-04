@@ -13,13 +13,20 @@
   let maximo = 0;
   DADOS.anos.forEach(a => DADOS.mensal[a].forEach(v => { if (v > maximo) maximo = v; }));
 
-  // Escala de lavanda claro a roxo profundo.
+  // Escala de cor construída a partir das variáveis do CSS.
+  // Vai do tom claro (--lavanda) a uma versão escurecida de --roxo.
+  const estilo = getComputedStyle(document.documentElement);
+  function paraRGB(nome, padrao) {
+    const hex = (estilo.getPropertyValue(nome) || padrao).trim();
+    return [1, 3, 5].map(i => parseInt(hex.substr(i, 2), 16));
+  }
+  const claro = paraRGB("--lavanda", "#EDE3F7");
+  const escuro = paraRGB("--roxo", "#6B2E8F").map(c => Math.round(c * 0.72));
+
   function cor(v) {
     if (v === null || v === undefined) return "#F2F2F4";
     const t = v / maximo;                     // 0 a 1
-    const de = [237, 227, 247];               // --lavanda
-    const ate = [77, 25, 110];                // roxo profundo
-    const c = de.map((d, i) => Math.round(d + (ate[i] - d) * Math.pow(t, 0.75)));
+    const c = claro.map((d, i) => Math.round(d + (escuro[i] - d) * Math.pow(t, 0.75)));
     return `rgb(${c[0]},${c[1]},${c[2]})`;
   }
 

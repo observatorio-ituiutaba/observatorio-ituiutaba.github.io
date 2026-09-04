@@ -4,8 +4,17 @@
 (function () {
   if (typeof Chart === "undefined" || typeof DADOS === "undefined") return;
 
-  const ROXO = "#6B2E8F", MAGENTA = "#C4368C", LARANJA = "#D9531E",
-        LAVANDA = "#C9A6E8", TINTA2 = "#5B4470", BORDA = "#DCCBEC";
+  // As cores vêm das variáveis definidas em assets/css/estilo.css.
+  // Mudar a paleta lá muda os gráficos junto.
+  const estilo = getComputedStyle(document.documentElement);
+  const cor = (nome, padrao) => (estilo.getPropertyValue(nome) || padrao).trim();
+
+  const ROXO    = cor("--roxo",     "#6B2E8F"),
+        MAGENTA = cor("--magenta",  "#C4368C"),
+        LARANJA = cor("--laranja",  "#D9531E"),
+        LAVANDA = cor("--lavanda-3","#C9A6E8"),
+        TINTA2  = cor("--tinta-2",  "#5B4470"),
+        BORDA   = cor("--borda",    "#DCCBEC");
 
   Chart.defaults.font.family = "'Source Sans 3', system-ui, sans-serif";
   Chart.defaults.font.size = 13;
@@ -17,7 +26,7 @@
 
   const eixoY = t => ({
     beginAtZero: true, title: { text: t, display: true, color: TINTA2 },
-    grid: { color: "#F0EAF6" }, border: { display: false }
+    grid: { color: cor("--lavanda-2", "#F7F1FB") }, border: { display: false }
   });
   const eixoX = { grid: { display: false } };
 

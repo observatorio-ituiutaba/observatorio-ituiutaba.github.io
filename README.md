@@ -165,6 +165,18 @@ Alguns números aparecem em prosa (na página inicial, nos boletins listados). E
 
 ---
 
+## Trocar as cores do site
+
+Todas as cores saem de um bloco só: o `:root` no topo de `assets/css/estilo.css`. Ele alimenta as seis páginas, os gráficos do painel, a grade da página inicial e o símbolo do cabeçalho. Não há cor escrita em nenhum outro arquivo.
+
+O arquivo `PALETAS-PRONTAS.md` traz quatro combinações testadas, prontas para colar, e uma tabela explicando o que cada variável controla.
+
+Para testar antes de publicar, edite o CSS no seu computador e abra o `index.html` no navegador — a mudança aparece na hora, sem precisar subir nada. Só depois de gostar do resultado envie o arquivo para o GitHub.
+
+Um cuidado: a faixa de emergência no topo tem texto branco sobre `--laranja`. Se essa cor ficar clara demais, o texto some — e é a faixa que precisa ser lida por quem está em urgência.
+
+---
+
 ## Trocar o nome do observatório
 
 O nome aparece em 25 lugares, espalhados por seis páginas e dois arquivos de documentação. Se um dia ele mudar, o caminho mais seguro é usar a busca do GitHub para não esquecer nenhum.
